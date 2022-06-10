@@ -1,0 +1,63 @@
+{
+  "name": "sdc3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start-frontend": "vue-cli-service serve",
+    "start-backend": "nodemon --watch api api/app.js",
+    "start-database": "docker compose up",
+    "start": "node api/app.js",
+    "package-frontend": "npm run build && cd dist/ && zip -r ../deploy/frontend.zip .",
+    "package-backend": "zip -r deploy/backend.zip package.json api"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^1.1.3",
+    "axios": "^0.25.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "cfenv": "~1.2.4",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "darkmode-js": "^1.5.7",
+    "element-plus": "^1.2.0-beta.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mariadb": "^2.5.5",
+    "sequelize": "^6.16.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "sass": "^1.43.4",
+    "sass-loader": "^10.2.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
